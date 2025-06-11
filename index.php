@@ -63,28 +63,39 @@
         // Se não estiver logado, exibir o formulário:
         if (!isset($_SESSION['usuario'])):
         ?>
-        <form method="POST" class="text-center">
-            <img class="mb-4" src="https://cdn-icons-png.flaticon.com/512/90/90825.png" alt="" width="72" height="57">
-            <h1 class="h3 mb-3 fw-normal">Por favor, realize o login:</h1>
-            <div class="form-floating mb-2">
-                <input type="email" class="form-control" name="email" placeholder="nome@exemplo.com" required>
-                <label>Email:</label>
-            </div>
-            <div class="form-floating mb-2">
-                <input type="password" class="form-control" name="senha" placeholder="Senha" required>
-                <label>Senha:</label>
-            </div>
-            <button class="w-100 btn btn-lg btn-outline-dark" type="submit">Logar</button>
-            <p class="mt-5 mb-3 text-muted">&copy; Diego - Senac Patrocínio/MG</p>
-        </form>
+            <form method="POST" class="text-center">
+                <img class="mb-4" src="https://cdn-icons-png.flaticon.com/512/90/90825.png" alt="" width="72" height="57">
+                <h1 class="h3 mb-3 fw-normal">Por favor, realize o login:</h1>
+                <div class="form-floating mb-2">
+                    <input type="email" class="form-control" name="email" placeholder="nome@exemplo.com" required>
+                    <label>Email:</label>
+                </div>
+                <div class="form-floating mb-2">
+                    <input type="password" class="form-control" name="senha" placeholder="Senha" required>
+                    <label>Senha:</label>
+                </div>
+                <button class="w-100 btn btn-lg btn-outline-dark" type="submit">Logar</button>
+                <p class="mt-5 mb-3 text-muted">&copy; Diego - Senac Patrocínio/MG</p>
+            </form>
         <?php else: ?>
             <div class="text-center">
-                <h2>Bem-vindo, <?=($_SESSION['usuario']) ?>!</h2>
+                <h2>Bem-vindo, <?= ($_SESSION['usuario']) ?>!</h2>
                 <p>Use o menu acima para navegar no sistema.</p>
             </div>
         <?php endif; ?>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 </body>
+
 </html>
